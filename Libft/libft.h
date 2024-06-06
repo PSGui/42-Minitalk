@@ -64,5 +64,4 @@ void	ft_str(char *s, int *contagem);
 void	ft_unsigned(unsigned int n, int *contagem);
 void	ft_pointer(unsigned long nbr, int *contagem);
 
-
 #endif
