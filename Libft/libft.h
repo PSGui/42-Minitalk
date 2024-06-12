@@ -64,5 +64,15 @@ void	ft_str(char *s, int *contagem);
 void	ft_unsigned(unsigned int n, int *contagem);
 void	ft_pointer(unsigned long nbr, int *contagem);
 
+//
+
+int		ft_printf(const char *str, ...);
+void	ft_formatspecifier(char specifier, va_list args, int *contagem);
+void	ft_char(char c, int *contagem);
+void	ft_hexa(unsigned int nbr, char uplow, int *contagem);
+void	ft_nbr(int n, int *contagem);
+void	ft_str(char *s, int *contagem);
+void	ft_unsigned(unsigned int n, int *contagem);
+void	ft_pointer(unsigned long nbr, int *contagem);
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gsaladri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/06 16:39:15 by gsaladri          #+#    #+#             */
+/*   Updated: 2024/06/06 16:39:35 by gsaladri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -8,20 +20,22 @@
 
 int	param_check(int argc, char *argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (argc != 3){
-		ft_printf("Certifique-se que o número de parâmetros está correto e que segue esta lógica:\n");
-		ft_printf("./cliente <PID> <string>\n");
+	if (argc != 3)
+	{
+		ft_printf("Check if the parameters look like this:\n");
+		ft_printf("./client <PID> <string>\n");
 		return (1);
 	}
-	if (argc == 3){
+	if (argc == 3)
+	{
 		while (argv[i] != '\0')
 		{
 			if (!ft_isdigit(argv[i]))
 			{
-				ft_printf("PID inválido! É uma sequência de números.\n");
+				ft_printf("Invalid PID! It's a number sequence.\n");
 				return (1);
 			}
 			i++;
@@ -52,15 +66,13 @@ void	send_sigusr(int pid, unsigned char character)
 
 int	main(int argc, char *argv[])
 {
-	int	pid;
+	int		pid;
 	char	*msg;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (param_check(argc, argv[1]) != 0)
-    	{
-        	return (1);
-    	}
+		return (1);
 	pid = ft_atoi(argv[1]);
 	msg = argv[2];
 	while (msg[i])
